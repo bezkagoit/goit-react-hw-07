@@ -1,0 +1,38 @@
+.contactForm {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 360px;
+  width: 100%;
+}
+.labelForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.formField {
+  padding: 8px 12px;
+  border-radius: 3px;
+  /* border: 1px solid #ccc; */
+  outline: none;
+  font-size: 16px;
+}
+.buttonForm {
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  background-color: lightgray;
+  border-radius: 6px;
+  max-width: 100px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
