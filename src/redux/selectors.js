@@ -15,6 +15,8 @@ export const selectFilteredContacts = createSelector(
       return items.filter((contact) =>
         contact.name.toLowerCase().includes(filter.toLowerCase())
       );
+    } else {
+      return items;
     }
   }
 );

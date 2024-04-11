@@ -5,12 +5,6 @@ import { selectFilteredContacts } from "../../redux/selectors.js";
 
 const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
-  console.log("Filtered Contacts:", filteredContacts);
-
-  // Перевірка, чи є filteredContacts масивом
-  if (!Array.isArray(filteredContacts)) {
-    return <div>Loading...</div>; // Або будь-яке інше повідомлення про завантаження або помилку
-  }
 
   return (
     <div>

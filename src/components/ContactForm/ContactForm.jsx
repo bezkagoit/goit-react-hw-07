@@ -12,8 +12,8 @@ const ContactSchema = Yup.object().shape({
     .max(50, "User name must be less than 50 characters!")
     .required("Name is required!"),
   number: Yup.string()
-    .matches(/^\d{3}-\d{2}-\d{2}$/, {
-      message: "Enter correct phone number: 111-11-11",
+    .matches(/^\d{3}-\d{2}-\d{4}$/, {
+      message: "Enter correct phone number: 111-11-1111",
       excludeEmptyString: false,
     })
     .required("Phone number is required!"),
@@ -27,14 +27,9 @@ const initialValues = {
 const ContactForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (formData, formActions) => {
-    // const newContact = {
-    //   ...formData,
-    //   id: nanoid(),
-    // };
-
+  const handleSubmit = (newContact, actions) => {
     dispatch(addContact(newContact));
-    formActions.resetForm();
+    actions.resetForm();
   };
 
   return (
