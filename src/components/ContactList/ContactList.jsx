@@ -1,20 +1,16 @@
 import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact.jsx";
 import css from "./ContactList.module.css";
-import { selectFilter } from "../../redux/filtersSlice.js";
-import { selectContacts } from "../../redux/contactsSlice.js";
+import { selectFilteredContacts } from "../../redux/selectors.js";
 
 const ContactList = () => {
-  // Отримання всього об'єкту contacts зі стану Redux
-  const contacts = useSelector(selectContacts);
+  const filteredContacts = useSelector(selectFilteredContacts);
+  console.log("Filtered Contacts:", filteredContacts);
 
-  // Отримання фільтру зі стану Redux
-  const filterText = useSelector(selectFilter) ?? "";
-
-  // Фільтрація контактів за ім'ям з урахуванням фільтру
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filterText.toLowerCase())
-  );
+  // Перевірка, чи є filteredContacts масивом
+  if (!Array.isArray(filteredContacts)) {
+    return <div>Loading...</div>; // Або будь-яке інше повідомлення про завантаження або помилку
+  }
 
   return (
     <div>

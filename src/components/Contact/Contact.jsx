@@ -3,7 +3,7 @@ import { ImPhone } from "react-icons/im";
 import { ImUser } from "react-icons/im";
 import css from "../Contact/Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch(); // Отримуємо функцію dispatch з Redux
